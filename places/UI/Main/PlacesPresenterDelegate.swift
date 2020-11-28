@@ -6,12 +6,12 @@
 //
 
 import Foundation
+import CoreLocation
 
 protocol PlacesPresenterDelegate {
 
     var places: [Place] { get }
-    func currentLocation()
     func loadPlaces()
     func getDistanceFromUserLocation(to: Location) -> String?
-    
+    func getCurrentLocation() -> CLLocationCoordinate2D?
 }

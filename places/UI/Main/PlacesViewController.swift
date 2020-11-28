@@ -63,8 +63,12 @@ extension PlacesViewController: UICollectionViewDelegate, UICollectionViewDataSo
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(identifier: "DetailInfoViewController") as! DetailInfoViewController
-        navigationController?.pushViewController(controller, animated: true)
+        var controller = storyboard.instantiateViewController(identifier: "DetailInfoViewController") as! DetailInfoViewDelegate
+        controller.setPresenter()
+        let place = presenter.places[indexPath.row]
+        controller.presenter.place = place
+        controller.presenter.userLocation = presenter.getCurrentLocation()
+        navigationController?.pushViewController(controller as! UIViewController, animated: true)
 
     }
 

@@ -32,6 +32,31 @@ class PlacesService: NSObject, Service {
         return currentLocation
     }
 
+    static func getPhotoUrl(for photo: Photo) -> URL? {
+        return URL.init(string: "\(GoogleMapsAPIKeys.googlePhotosHost)?maxwidth=\(photo.width)&key=\(GoogleMapsAPIKeys.googlePlacesApiKey)&photoreference=\(photo.ref)")
+    }
+
+   static func loadPhoto(with photo: Photo, completionHandler: @escaping (UIImage?) -> Void) {
+    guard let url = getPhotoUrl(for: photo) else { completionHandler(nil)
+        return
+    }
+        AF.request( url,method: .get).response{ response in
+
+         switch response.result {
+         case .success(let responseData):
+            guard let data = responseData else {
+                completionHandler(nil)
+                return
+            }
+              completionHandler(UIImage(data: data, scale:1))
+
+          case .failure(let error):
+            print(error.localizedDescription)
+            completionHandler(nil)
+          }
+      }
+    }
+
     func loadPlaces(with pagetoken: String?, completionHandler: @escaping (NearbySearchResponse?) -> Void) {
         guard let token = pagetoken else {
             print("nill")
