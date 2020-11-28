@@ -9,6 +9,20 @@ import UIKit
 import GoogleMaps
 import GooglePlaces
 
+
+enum GoogleMapsAPIKeys {
+
+    static let googleMapsApiKey = "AIzaSyCiefdLOYQM88Ko3n41hcEMIeSADO1Khak"
+    static let googlePlacesApiKey = "AIzaSyCkC2YquBA4g4QvO0LlH6PJsuQgCfwPQEc"
+    static let nearbySearchApiHost = "https://maps.googleapis.com/maps/api/place/nearbysearch/json"
+    static let googlePlacesApiKeyParam = "key"
+    static let pageTokenParam = "pagetoken"
+    static let radiusParam = "radius"
+    static let radiusKey = "5000"
+    static let locationParam = "location"
+    
+}
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
