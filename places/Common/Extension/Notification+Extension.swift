@@ -8,7 +8,6 @@
 import Foundation
 
 extension Notification.Name {
-
     static let didReceiveLocation = Notification.Name("didReceiveLocation")
     
 }

@@ -9,5 +9,6 @@ target 'places' do
 pod 'Alamofire', '~> 5.2'
 pod 'GoogleMaps', '~> 4.0.0'
 pod 'GooglePlaces', '~> 4.0.0'
+pod 'FloatingPanel'
 
 end

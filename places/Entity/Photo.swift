@@ -8,7 +8,6 @@
 import Foundation
 
 struct Photo: Codable {
-
     var ref: String
     var width: Int
     var height: Int

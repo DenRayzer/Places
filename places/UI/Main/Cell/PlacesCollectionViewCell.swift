@@ -8,23 +8,25 @@
 import UIKit
 
 class PlacesCollectionViewCell: UICollectionViewCell {
-    
+
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var photoImageView: UIImageView!
+    var isHeightCalculated: Bool = false
 
     override func awakeFromNib() {
         super.awakeFromNib()
         self.layer.cornerRadius = 8
+    }
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
     }
 
     func configureCell(with place: Place, distance: String) {
         titleLabel.text = place.name
         distanceLabel.text = distance
     }
-
-    var isHeightCalculated: Bool = false
 
     override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
         setNeedsLayout()

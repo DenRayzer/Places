@@ -8,7 +8,6 @@
 import Foundation
 
 struct NearbySearchResponse: Codable {
-
     var nextPageToken: String?
     var results: [Place]
 

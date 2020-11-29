@@ -8,7 +8,6 @@
 import Foundation
 
 struct OpeningHours: Codable {
-
     var isOpen: Bool
 
     enum CodingKeys: String, CodingKey {

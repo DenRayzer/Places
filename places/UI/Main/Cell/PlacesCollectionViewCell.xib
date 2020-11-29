@@ -11,23 +11,23 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="PlacesCollectionViewCell" customModule="places" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="327" height="97"/>
+            <rect key="frame" x="0.0" y="0.0" width="327" height="77"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="327" height="97"/>
+                <rect key="frame" x="0.0" y="0.0" width="327" height="77"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pqt-8L-8Og">
-                        <rect key="frame" x="0.0" y="0.0" width="327" height="97"/>
+                        <rect key="frame" x="0.0" y="0.0" width="327" height="77"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ближайшее к пользователю место, значит-с" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Td-Mr-2yG">
-                                <rect key="frame" x="16" y="12" width="295" height="48"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ближайшее место, значит-с" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Td-Mr-2yG">
+                                <rect key="frame" x="16" y="12" width="295" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дальность, получается" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9wh-Ti-fwM">
-                                <rect key="frame" x="16" y="68" width="295" height="18"/>
+                                <rect key="frame" x="16" y="48" width="295" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -36,8 +36,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="9wh-Ti-fwM" secondAttribute="trailing" constant="16" id="OUw-Hy-eH2"/>
-                            <constraint firstItem="9wh-Ti-fwM" firstAttribute="top" secondItem="2Td-Mr-2yG" secondAttribute="bottom" constant="8" id="Ol2-4B-Dtc"/>
                             <constraint firstAttribute="trailing" secondItem="2Td-Mr-2yG" secondAttribute="trailing" constant="16" id="UMp-7I-BAn"/>
+                            <constraint firstItem="9wh-Ti-fwM" firstAttribute="top" secondItem="2Td-Mr-2yG" secondAttribute="bottom" constant="12" id="ZO1-aw-HAa"/>
                             <constraint firstItem="2Td-Mr-2yG" firstAttribute="leading" secondItem="pqt-8L-8Og" secondAttribute="leading" constant="16" id="hMZ-vf-uXH"/>
                             <constraint firstItem="2Td-Mr-2yG" firstAttribute="top" secondItem="pqt-8L-8Og" secondAttribute="top" constant="12" id="hh6-r2-jF5"/>
                             <constraint firstAttribute="bottom" secondItem="9wh-Ti-fwM" secondAttribute="bottom" constant="11" id="nqN-Rr-9Zr"/>
@@ -53,12 +53,12 @@
                 <constraint firstAttribute="bottom" secondItem="pqt-8L-8Og" secondAttribute="bottom" id="WTB-7M-B23"/>
                 <constraint firstAttribute="trailing" secondItem="pqt-8L-8Og" secondAttribute="trailing" id="pqH-ON-kfO"/>
             </constraints>
-            <size key="customSize" width="327" height="97"/>
+            <size key="customSize" width="327" height="77"/>
             <connections>
                 <outlet property="distanceLabel" destination="9wh-Ti-fwM" id="vpu-J6-AfO"/>
                 <outlet property="titleLabel" destination="2Td-Mr-2yG" id="QQy-qU-DyH"/>
             </connections>
-            <point key="canvasLocation" x="296.37681159420293" y="123.54910714285714"/>
+            <point key="canvasLocation" x="296.37681159420293" y="116.85267857142857"/>
         </collectionViewCell>
     </objects>
     <resources>

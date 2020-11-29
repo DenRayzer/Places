@@ -5,13 +5,12 @@
 //  Created by Елизавета on 28.11.2020.
 //
 
-import Foundation
 import CoreLocation
 
-protocol DetailInfoPresenterDelegate {
-
+protocol MapPresenterDelegate {
     var userLocation: CLLocationCoordinate2D? { set get }
     var place: Place? { set get }
-    func setViewDelegate(viewDelegate: DetailInfoViewDelegate)
+    func setViewDelegate(viewDelegate: MapViewDelegate)
     func getPlaceLocation() -> CLLocationCoordinate2D?
+
 }

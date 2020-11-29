@@ -8,7 +8,6 @@
 import Foundation
 
 protocol PlacesViewDelegate {
-
     func showData()
 
 }

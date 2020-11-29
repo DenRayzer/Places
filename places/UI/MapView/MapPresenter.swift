@@ -8,17 +8,12 @@
 import Foundation
 import CoreLocation
 
-class DetailInfoPresenter: DetailInfoPresenterDelegate {
-    var service: Service
-    var viewDelegate: DetailInfoViewDelegate!
+class MapPresenter: MapPresenterDelegate {
+    var viewDelegate: MapViewDelegate!
     var userLocation: CLLocationCoordinate2D?
     var place: Place?
 
-    init(service: Service = PlacesService()) {
-        self.service = service
-    }
-
-    func setViewDelegate(viewDelegate: DetailInfoViewDelegate) {
+    func setViewDelegate(viewDelegate: MapViewDelegate) {
         self.viewDelegate = viewDelegate
     }
 

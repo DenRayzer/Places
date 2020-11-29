@@ -17,4 +17,5 @@ enum GoogleMapsAPIKeys {
     static let radiusParam = "radius"
     static let radiusKey = "1000"
     static let locationParam = "location"
+
 }

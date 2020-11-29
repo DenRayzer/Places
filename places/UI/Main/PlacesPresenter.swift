@@ -5,17 +5,15 @@
 //  Created by Елизавета on 22.11.2020.
 //
 
-import Foundation
 import CoreLocation
 
 class PlacesPresenter: PlacesPresenterDelegate {
-
     var places: [Place] = []
-    private var service: Service
+    private var service: PlacesService
     private var viewDelegate: PlacesViewDelegate
-    private var nextPageToken: String? = "0"
+    private var nextPageToken: String? = Constant.firstPageFlag
 
-    init(viewDelegate: PlacesViewDelegate, service: Service = PlacesService()) {
+    init(viewDelegate: PlacesViewDelegate, service: PlacesService = GooglePlacesService()) {
         self.service = service
         self.viewDelegate = viewDelegate
     }
@@ -31,6 +29,20 @@ class PlacesPresenter: PlacesPresenterDelegate {
         }
     }
 
+    func refreshData(completion: @escaping () -> Void) {
+        nextPageToken = Constant.firstPageFlag
+        places.removeAll()
+        service.loadPlaces(with: nextPageToken) { result in
+            guard let response = result else { return }
+            self.nextPageToken = response.nextPageToken
+            for i in response.results {
+                self.places.append(i)
+            }
+            completion()
+            self.viewDelegate.showData()
+        }
+    }
+
     func getCurrentLocation() -> CLLocationCoordinate2D? {
         return service.getCurrentLocation()
     }
@@ -39,7 +51,7 @@ class PlacesPresenter: PlacesPresenterDelegate {
         guard let location = service.getCurrentLocation() else { return nil }
         let from = CLLocation(latitude: location.latitude, longitude: location.longitude)
         let to = CLLocation(latitude: to.lat, longitude: to.lng)
-        return String.init(format: "Distance %.2f meters", from.distance(from: to))
+        return String.init(format: "Distance %.0f meters", from.distance(from: to))
 
     }
 
