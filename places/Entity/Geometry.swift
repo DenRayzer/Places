@@ -10,5 +10,5 @@ import Foundation
 struct Geometry: Codable {
 
     var location: Location
-    
+
 }

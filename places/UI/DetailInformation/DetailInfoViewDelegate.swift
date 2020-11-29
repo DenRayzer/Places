@@ -8,7 +8,7 @@
 import Foundation
 
 protocol DetailInfoViewDelegate {
-    var presenter: DetailInfoPresenterDelegate { get set}
+    var presenter: DetailInfoPresenterDelegate { get set }
     func showData()
     func setPresenter()
 }

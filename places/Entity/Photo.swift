@@ -18,5 +18,5 @@ struct Photo: Codable {
         case width
         case height
     }
-    
+
 }

@@ -7,7 +7,7 @@ target 'places' do
 
   # Pods for places
 pod 'Alamofire', '~> 5.2'
- pod 'GoogleMaps', '~> 4.0.0'
-  pod 'GooglePlaces', '~> 4.0.0'
+pod 'GoogleMaps', '~> 4.0.0'
+pod 'GooglePlaces', '~> 4.0.0'
 
 end

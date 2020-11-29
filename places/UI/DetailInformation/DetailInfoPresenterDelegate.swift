@@ -13,4 +13,5 @@ protocol DetailInfoPresenterDelegate {
     var userLocation: CLLocationCoordinate2D? { set get }
     var place: Place? { set get }
     func setViewDelegate(viewDelegate: DetailInfoViewDelegate)
+    func getPlaceLocation() -> CLLocationCoordinate2D?
 }

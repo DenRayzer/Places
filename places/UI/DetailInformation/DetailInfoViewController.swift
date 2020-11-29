@@ -20,26 +20,32 @@ class DetailInfoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let camera = GMSCameraPosition.camera(withLatitude: mapView.myLocation?.coordinate.latitude ?? 121.082711, longitude: mapView.myLocation?.coordinate.longitude ?? 121.082711, zoom: 7)
-        mapView.camera = camera
         self.navigationController?.navigationBar.shadowImage = UIImage()
+        configureMapView()
+    }
+
+    func configureMapView() {
+        guard let location = presenter.place?.geometry.location else { return }
+        let camera = GMSCameraPosition.camera(withLatitude: location.lat, longitude: location.lng, zoom: 12)
+        mapView.camera = camera
         mapView.settings.compassButton = true
         mapView.isMyLocationEnabled = true
         mapView.settings.myLocationButton = true
         self.locationManager.delegate = self
         self.locationManager.startUpdatingLocation()
+        addLocationMarker(for: presenter.userLocation, title: "Your Location")
+        addLocationMarker(for: presenter.getPlaceLocation(), title: presenter.place?.name ?? "")
     }
 
     override func viewWillAppear(_ animated: Bool) {
         showData()
-        addCurrentLocationMarker(presenter.userLocation)
     }
 
-    func addCurrentLocationMarker(_ userLocation: CLLocationCoordinate2D?) {
-        guard let location = userLocation else { return }
+    func addLocationMarker(for location: CLLocationCoordinate2D?, title: String) {
+        guard let location = location else { return }
         let marker = GMSMarker()
         marker.position = location
-        marker.title = "Your location"
+        marker.title = title
         marker.map = mapView
     }
 
@@ -56,10 +62,10 @@ extension DetailInfoViewController: DetailInfoViewDelegate {
         officeHoursLabel.text = "Is open now: \(isOpen)"
         descriptionLabel.text = presenter.place?.types?.joined(separator: ", ")
         if let p = presenter.place?.photos {
-        PlacesService.loadPhoto(with: p[0]) { r in
-            guard let im = r else { return }
-            self.photoImageView.image = im
-        }
+            PlacesService.loadPhoto(with: p[0]) { r in
+                guard let im = r else { return }
+                self.photoImageView.image = im
+            }
         }
     }
 
@@ -77,8 +83,6 @@ extension DetailInfoViewController: CLLocationManagerDelegate {
         let camera = GMSCameraPosition.camera(withLatitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!, zoom: 17.0)
 
         self.mapView?.animate(to: camera)
-
-        //Finally stop updating location otherwise it will come again and again in this delegate
         self.locationManager.stopUpdatingLocation()
 
     }
