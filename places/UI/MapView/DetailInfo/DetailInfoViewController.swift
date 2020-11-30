@@ -37,8 +37,7 @@ class DetailInfoViewController: UIViewController {
         }
     }
 
-
-
+// MARK: --DetailInfoViewDelegate
 
 extension DetailInfoViewController: DetailInfoViewDelegate {
     func setPresenter() {

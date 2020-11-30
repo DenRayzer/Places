@@ -128,7 +128,7 @@
 				6E45E083256A4FC000C0A823 /* Resourses */,
 				6EB31E54256A90990070EDD2 /* Networking */,
 				6E45E082256A4FAB00C0A823 /* UI */,
-				6EB31E5F256AD5FB0070EDD2 /* Entity */,
+				6EB31E5F256AD5FB0070EDD2 /* Models */,
 			);
 			path = places;
 			sourceTree = "<group>";
@@ -217,17 +217,14 @@
 			path = MapView;
 			sourceTree = "<group>";
 		};
-		6EB31E5F256AD5FB0070EDD2 /* Entity */ = {
+		6EB31E5F256AD5FB0070EDD2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				6EB31E60256AD63F0070EDD2 /* NearbySearchResponse.swift */,
-				6EB31E64256AD6E70070EDD2 /* Geometry.swift */,
-				6EB31E67256AD7400070EDD2 /* Location.swift */,
 				6EB31E6D256AD8E80070EDD2 /* Place.swift */,
-				6EB4388C25728372008FC72D /* Photo.swift */,
-				6ED437512572D75E00E3B7BB /* OpeningHours.swift */,
+				6EF08DC42574EC38008E1AC6 /* PlaceFieldsModels */,
 			);
-			path = Entity;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		6EB438882572692A008FC72D /* Extension */ = {
@@ -247,6 +244,17 @@
 				6EBFF1B52573EB4E00E5D8BF /* DetailInfoPresenterDelegate.swift */,
 			);
 			path = DetailInfo;
+			sourceTree = "<group>";
+		};
+		6EF08DC42574EC38008E1AC6 /* PlaceFieldsModels */ = {
+			isa = PBXGroup;
+			children = (
+				6EB31E67256AD7400070EDD2 /* Location.swift */,
+				6EB4388C25728372008FC72D /* Photo.swift */,
+				6EB31E64256AD6E70070EDD2 /* Geometry.swift */,
+				6ED437512572D75E00E3B7BB /* OpeningHours.swift */,
+			);
+			path = PlaceFieldsModels;
 			sourceTree = "<group>";
 		};
 		8EAA8E0EC28C3176AF9BBE3B /* Frameworks */ = {
@@ -494,7 +502,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -549,7 +557,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

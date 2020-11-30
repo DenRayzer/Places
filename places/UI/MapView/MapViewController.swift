@@ -14,13 +14,11 @@ class MapViewController: UIViewController {
     var locationManager = CLLocationManager()
     var presenter: MapPresenterDelegate = MapPresenter()
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.shadowImage = UIImage()
         configureMapView()
     }
-
 
     func configureMapView() {
         guard let location = presenter.place?.geometry.location else {
@@ -44,6 +42,7 @@ class MapViewController: UIViewController {
         let marker = GMSMarker()
         marker.position = location
         marker.title = title
+        marker.tracksViewChanges = false
         marker.map = mapView
     }
 
@@ -69,7 +68,7 @@ extension MapViewController: FloatingPanelControllerDelegate {
 
 }
 
-// MARK: --DetailInfoViewDelegate
+// MARK: --MapViewDelegate
 
 extension MapViewController: MapViewDelegate {
     func setData() {
