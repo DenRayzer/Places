@@ -78,12 +78,9 @@ extension PlacesViewController: UICollectionViewDelegate, UICollectionViewDataSo
         controller.presenter.place = place
         controller.presenter.userLocation = presenter.getCurrentLocation()
         navigationController?.pushViewController(controller as! UIViewController, animated: true)
-
     }
 
-    func collectionView(_ collectionView: UICollectionView,
-        willDisplay cell: UICollectionViewCell,
-        forItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if indexPath.row == presenter.places.count - 2 {
             presenter.loadPlaces()
         }
@@ -94,7 +91,6 @@ extension PlacesViewController: UICollectionViewDelegate, UICollectionViewDataSo
 // MARK: --UICollectionViewDelegateFlowLayout
 
 extension PlacesViewController: UICollectionViewDelegateFlowLayout {
-
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.frame.width
         let height = CGFloat(110)
@@ -102,4 +98,3 @@ extension PlacesViewController: UICollectionViewDelegateFlowLayout {
     }
 
 }
-
