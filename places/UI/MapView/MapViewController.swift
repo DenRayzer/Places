@@ -11,7 +11,6 @@ import FloatingPanel
 
 class MapViewController: UIViewController {
     @IBOutlet weak var mapView: GMSMapView!
-    var locationManager = CLLocationManager()
     var presenter: MapPresenterDelegate = MapPresenter()
 
     override func viewDidLoad() {
@@ -30,7 +29,6 @@ class MapViewController: UIViewController {
         mapView.settings.compassButton = true
         mapView.isMyLocationEnabled = true
         mapView.settings.myLocationButton = true
-        self.locationManager.delegate = self
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -78,11 +76,5 @@ extension MapViewController: MapViewDelegate {
     func setPresenter() {
         presenter.setViewDelegate(viewDelegate: self)
     }
-
-}
-
-// MARK: --FloatingPanelControllerDelegate
-
-extension MapViewController: CLLocationManagerDelegate {
 
 }
