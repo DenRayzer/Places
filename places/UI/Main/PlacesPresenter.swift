@@ -31,15 +31,15 @@ class PlacesPresenter: PlacesPresenterDelegate {
 
     func refreshData(completion: @escaping () -> Void) {
         nextPageToken = Constant.firstPageFlag
-        places.removeAll()
         service.loadPlaces(with: nextPageToken) { result in
             guard let response = result else { return }
             self.nextPageToken = response.nextPageToken
+            self.places.removeAll()
             for i in response.results {
                 self.places.append(i)
             }
-            completion()
             self.viewDelegate.showData()
+            completion()
         }
     }
 
